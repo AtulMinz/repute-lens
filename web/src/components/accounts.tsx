@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Account } from "@lens-protocol/client";
 import { useLogin, useAccountsAvailable } from "@lens-protocol/react";
 import { useAccount, useWalletClient } from "wagmi";
@@ -46,14 +45,14 @@ export function AccountSelector({
         ? {
             accountOwner: {
               account: account.address,
-              app: process.env.NEXT_PUBLIC_APP_ADDRESS,
+              app: process.env.WALLET_CONNECT,
               owner: walletClient.account.address,
             },
           }
         : {
             accountManager: {
               account: account.address,
-              app: process.env.NEXT_PUBLIC_APP_ADDRESS,
+              app: process.env.WALLET_CONNECT,
               manager: walletClient.account.address,
             },
           };
