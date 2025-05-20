@@ -10,10 +10,10 @@ import { getPublicClient } from "@/lib/lens/client";
 
 const config = createConfig(
   getDefaultConfig({
-    chains: [chains.testnet],
+    chains: [chains.mainnet],
     transports: {
-      [chains.testnet.id]: http(
-        `https://lens-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_ID}`
+      [chains.mainnet.id]: http(
+        `https://lens-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_ID}`
       ),
     },
 

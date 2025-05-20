@@ -38,10 +38,13 @@ export default async function GetStarted() {
       <main className="min-h-screen bg-white">
         {/* Navbar */}
         <nav className="w-full max-w-7xl mx-auto py-6 px-6 flex items-center justify-between">
-          <div className="flex items-center space-x-1 text-xl font-black text-gray-900">
+          <Link
+            className="flex items-center space-x-1 text-xl font-black text-gray-900"
+            href={"/"}
+          >
             <BadgeCheck />
-            <Link href={"/"}>Repute</Link>
-          </div>
+            <span>Repute</span>
+          </Link>
         </nav>
 
         <div className="flex flex-col items-center justify-center min-h-[80vh] px-6">
@@ -113,15 +116,12 @@ export default async function GetStarted() {
           </CardHeader>
           <CardContent>
             <div className="flex flex-col space-y-4">
-              <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
-                <BadgeCheck className="h-5 w-5 text-primary" />
+              <div className="flex items-center space-x-2 text-sm text-emerald-600 mb-4">
+                <BadgeCheck className="h-5 w-5" />
                 <span>Successfully authenticated with Lens Protocol</span>
               </div>
               <div className="flex gap-4">
-                <Link 
-                  href="/dashboard" 
-                  className="flex-1"
-                >
+                <Link href="/dashboard" className="flex-1">
                   <Button className="w-full px-6 py-3 text-lg hover:cursor-pointer group flex items-center justify-center transition">
                     Dashboard
                     <span className="ml-2 inline-block transform transition-transform duration-300 group-hover:translate-x-1">
@@ -129,11 +129,8 @@ export default async function GetStarted() {
                     </span>
                   </Button>
                 </Link>
-                <Link 
-                  href="/explore" 
-                  className="flex-1"
-                >
-                  <Button 
+                <Link href="/explore" className="flex-1">
+                  <Button
                     variant="outline"
                     className="w-full px-6 py-3 text-lg hover:cursor-pointer"
                   >
