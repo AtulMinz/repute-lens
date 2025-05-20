@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BadgeCheck, Key, Lock, UserCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export async function getAuthenticatedAccount() {
@@ -111,9 +112,35 @@ export default async function GetStarted() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center space-x-2 text-sm text-green-600">
-              <BadgeCheck className="h-5 w-5" />
-              <span>Successfully authenticated with Lens Protocol</span>
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
+                <BadgeCheck className="h-5 w-5 text-primary" />
+                <span>Successfully authenticated with Lens Protocol</span>
+              </div>
+              <div className="flex gap-4">
+                <Link 
+                  href="/dashboard" 
+                  className="flex-1"
+                >
+                  <Button className="w-full px-6 py-3 text-lg hover:cursor-pointer group flex items-center justify-center transition">
+                    Dashboard
+                    <span className="ml-2 inline-block transform transition-transform duration-300 group-hover:translate-x-1">
+                      &rarr;
+                    </span>
+                  </Button>
+                </Link>
+                <Link 
+                  href="/explore" 
+                  className="flex-1"
+                >
+                  <Button 
+                    variant="outline"
+                    className="w-full px-6 py-3 text-lg hover:cursor-pointer"
+                  >
+                    Explore
+                  </Button>
+                </Link>
+              </div>
             </div>
           </CardContent>
         </Card>
